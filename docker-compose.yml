@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  parallel-rabbitmq:
+    image: arm64v8/rabbitmq:3.10-management
+    container_name: polar-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
