@@ -1,19 +1,10 @@
 package com.aveiga.parallelconsumption;
 
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
-import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitAdmin;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 import java.util.Random;
 
@@ -21,7 +12,7 @@ import static java.lang.Thread.sleep;
 
 
 @Component
-public class AmqpConsumer {
+public class RabbitMqConsistentHashAmqpProducerConsumer {
 
     @Bean
     public ApplicationRunner runner(AmqpTemplate template) {
