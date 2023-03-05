@@ -3,6 +3,7 @@ package com.aveiga.parallelconsumption;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.amqp.core.AmqpTemplate;
 
@@ -12,9 +13,10 @@ import static java.lang.Thread.sleep;
 
 
 @Component
+@Profile("hash")
 public class RabbitMqConsistentHashAmqpProducerConsumer {
 
-    @Bean
+    /*@Bean
     public ApplicationRunner runner(AmqpTemplate template) {
         Random r = new Random();
         int low = 1;
@@ -36,15 +38,5 @@ public class RabbitMqConsistentHashAmqpProducerConsumer {
     @RabbitListener(queues = "${QUEUE}")
     public void listen1(String in) {
         System.out.println("Got message: " + in);
-    }
-
-//    @RabbitListener(queues = "com.aveiga.consistent-hash.myqueue2")
-//    public void listen2(String in) {
-//        System.out.println("Got message: " + in);
-//    }
-//
-//    @RabbitListener(queues = "com.aveiga.consistent-hash.myqueue" + instance)
-//    public void listen3(String in) {
-//        System.out.println("Got message: " + in);
-//    }
+    }*/
 }

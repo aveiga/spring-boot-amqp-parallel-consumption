@@ -20,7 +20,34 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
+			<version>3.0.2</version>
 		</dependency>
+
+		<!--<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>stream-client</artifactId>
+			<version>0.9.0</version>
+		</dependency>-->
+
+		<!--<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-amqp</artifactId>
+			<version>3.0.2</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.amqp/spring-rabbit-stream -->
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-stream</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

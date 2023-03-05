@@ -9,6 +9,7 @@ import org.springframework.beans.propertyeditors.CustomMapEditor;
 import org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class RabbitMqConsistentHashConfiguration {
@@ -39,17 +40,26 @@ public class RabbitMqConsistentHashConfiguration {
 
     @Bean
     public Queue myQueue1() {
-        return new Queue("com.aveiga.consistent-hash.myqueue1");
+        Queue myQueue1 = new Queue("com.aveiga.consistent-hash.myqueue1");
+        myQueue1.addArgument("x-single-active-consumer", true);
+
+        return myQueue1;
     }
 
     @Bean
     public Queue myQueue2() {
-        return new Queue("com.aveiga.consistent-hash.myqueue2");
+        Queue myQueue2 = new Queue("com.aveiga.consistent-hash.myqueue2");
+        myQueue2.addArgument("x-single-active-consumer", true);
+
+        return myQueue2;
     }
 
     @Bean
     public Queue myQueue3() {
-        return new Queue("com.aveiga.consistent-hash.myqueue3");
+        Queue myQueue3 = new Queue("com.aveiga.consistent-hash.myqueue3");
+        myQueue3.addArgument("x-single-active-consumer", true);
+
+        return myQueue3;
     }
 
     @Bean
